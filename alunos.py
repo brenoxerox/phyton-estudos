@@ -1,8 +1,4 @@
-opcao = 1
-
 alunos = []
-medias = []
-situacoes = []
 
 def situacao(media):
     if media >= 7:
@@ -10,53 +6,49 @@ def situacao(media):
     else:
         return "Reprovado"
 
-def calcular_media(n1, n2, n3):
-    return (n1 + n2 + n3) / 3
+def calcular_media(notas):
+    return sum(notas) / len(notas)
 
-
-while opcao != 0:
+while True:
     print("\n1 - Cadastrar aluno")
     print("2 - Ver alunos")
     print("0 - Sair")
 
-    opcao = int(input("Digite sua escolha: "))
+    opcao = input("Digite sua escolha: ")
 
-    if opcao == 1:
+    if opcao == "1":
         nome = input("Digite o nome do aluno: ")
-        alunos.append(nome)
 
-        notas_temporarias = []
-
+        notas = []
         for i in range(1, 4):
             nota = float(input(f"Digite a nota {i}: "))
-            notas_temporarias.append(nota)
+            notas.append(nota)
 
-        media = calcular_media(
-            notas_temporarias[0],
-            notas_temporarias[1],
-            notas_temporarias[2]
-        )
+        media = calcular_media(notas)
 
-        medias.append(media)
-        situacoes.append(situacao(media))
+        aluno = {
+            "nome": nome,
+            "media": media,
+            "situacao": situacao(media)
+        }
 
+        alunos.append(aluno)
         print("Aluno cadastrado com sucesso!")
 
-    elif opcao == 2:
+    elif opcao == "2":
         if len(alunos) == 0:
             print("Nenhum aluno cadastrado.")
         else:
-            ordem = 0
-            while ordem < len(alunos):
+            for aluno in alunos:
                 print(
-                    "Aluno:", alunos[ordem],
-                    "| Média:", medias[ordem],
-                    "| Situação:", situacoes[ordem]
+                    "Aluno:", aluno["nome"],
+                    "| Média:", aluno["media"],
+                    "| Situação:", aluno["situacao"]
                 )
-                ordem += 1
 
-    elif opcao == 0:
+    elif opcao == "0":
         print("Encerrando o programa...")
+        break
 
     else:
         print("Digite uma opção válida.")
