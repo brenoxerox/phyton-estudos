@@ -1,20 +1,21 @@
 # Sistema Simples de Cadastro de Alunos 🐍
 
-Projeto em Python desenvolvido para praticar lógica de programação.
+Projeto em Python criado para praticar lógica de programação e organização de dados.
 
 ## Funcionalidades
 - Cadastro do nome do aluno
 - Inserção de três notas
-- Cálculo da média
+- Cálculo automático da média
 - Verificação de situação (Aprovado ou Reprovado)
 - Listagem dos alunos cadastrados
 
 ## Conceitos utilizados
-- Listas
-- Estruturas condicionais
-- Laços de repetição (for e while)
 - Funções
-- Entrada e saída de dados
+- Listas
+- Dicionários
+- Laços de repetição
+- Estruturas condicionais
 
 ## Observação
-Este é um projeto inicial e será melhorado conforme o avanço dos estudos.
+Projeto em desenvolvimento, criado durante estudos iniciais em Python.
+O código foi refatorado para melhorar a organização dos dados.
